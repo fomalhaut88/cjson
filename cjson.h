@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 
-typedef enum { NULL_, INTEGER, FLOAT, STRING, LIST, OBJECT } JsonType;
+typedef enum { NULL_, BOOLEAN, INTEGER, FLOAT, STRING, LIST, OBJECT } JsonType;
 
 
 /* General */
@@ -28,6 +28,32 @@ Null createNull() {
 int nullToString(Null* z, char b[]) {
     strcpy(b, "null");
     return 4;
+}
+
+
+/* Boolean */
+
+typedef struct {
+    JsonType type;
+	int value;
+} Boolean;
+
+Boolean createBoolean(int value) {
+    Boolean z;
+    z.type = BOOLEAN;
+	z.value = value;
+    return z;
+}
+
+int booleanToString(Boolean* z, char b[]) {
+	if (z->value) {
+		strcpy(b, "true");
+		return 4;
+	}
+	else {
+		strcpy(b, "false");
+		return 5;
+	}
 }
 
 
@@ -206,6 +232,8 @@ int toString(void* z, char b[]) {
     switch (*(int*)z) {
         case NULL_:
             return nullToString(z, b);
+		case BOOLEAN:
+			return booleanToString(z, b);
         case INTEGER:
             return integerToString(z, b);
         case FLOAT:
