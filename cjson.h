@@ -35,25 +35,25 @@ int nullToString(Null* z, char b[]) {
 
 typedef struct {
     JsonType type;
-	int value;
+    int value;
 } Boolean;
 
 Boolean createBoolean(int value) {
     Boolean z;
     z.type = BOOLEAN;
-	z.value = value;
+    z.value = value;
     return z;
 }
 
 int booleanToString(Boolean* z, char b[]) {
-	if (z->value) {
-		strcpy(b, "true");
-		return 4;
-	}
-	else {
-		strcpy(b, "false");
-		return 5;
-	}
+    if (z->value) {
+        strcpy(b, "true");
+        return 4;
+    }
+    else {
+        strcpy(b, "false");
+        return 5;
+    }
 }
 
 
@@ -232,8 +232,8 @@ int toString(void* z, char b[]) {
     switch (*(int*)z) {
         case NULL_:
             return nullToString(z, b);
-		case BOOLEAN:
-			return booleanToString(z, b);
+        case BOOLEAN:
+            return booleanToString(z, b);
         case INTEGER:
             return integerToString(z, b);
         case FLOAT:

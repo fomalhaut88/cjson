@@ -6,8 +6,8 @@
 
 int main() {
     Null n = createNull();
-	
-	Boolean b = createBoolean(0);
+
+    Boolean b = createBoolean(0);
 
     Integer d = createInteger(5);
 
@@ -25,7 +25,7 @@ int main() {
     objectAdd(&o, "key_list", &l);
     objectAdd(&o, "flt", &f);
     objectAdd(&o, "str", &s);
-	objectAdd(&o, "bool_field", &b);
+    objectAdd(&o, "bool_field", &b);
 
     char buff[4096];
     toString(&o, buff);
