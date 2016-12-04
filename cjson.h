@@ -1,3 +1,6 @@
+#ifndef CJSON_H
+#define CJSON_H
+
 #define STRING_MAX_LENGTH 4096
 
 #include <stdio.h>
@@ -245,4 +248,6 @@ int toString(void* z, char b[]) {
         case OBJECT:
             return objectToString(z, b);
     }
+    
+#endif
 }
