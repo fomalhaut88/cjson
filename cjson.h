@@ -248,6 +248,6 @@ int toString(void* z, char b[]) {
         case OBJECT:
             return objectToString(z, b);
     }
-    
-#endif
 }
+
+#endif
