@@ -1,6 +1,6 @@
 # cjson
 
-**CJSON** is a library to create JSON strings in C.
+**CJSON** is a library to create JSON strings in C. To use it just copy the file **cjson.h** into your project.
 
 ### Tutorials
 
