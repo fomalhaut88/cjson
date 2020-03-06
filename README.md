@@ -1,8 +1,12 @@
 # cjson
 
-**CJSON** is a library to create JSON strings in C. To use it just copy the file **cjson.h** into your project.
+**CJSON** is a library to create JSON strings in C.
 
-### Tutorials
+## Installation
+
+To use it just copy the file **cjson.h** into your project.
+
+## Tutorial
 
 JSON supports a fixed set of elementary datatypes: integer, float, string, boolean, null.
 Not all of them are represented in C, this is why it's necessary to create their instances:
